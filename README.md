@@ -39,3 +39,40 @@ export MOODLE_SERVER_URL="[https://link-moodle-sekolah-anda.sch.id](https://link
 export MOODLE_API_TOKEN="masukkan_token_api_moodle_disini"
 
 python buat_kategori_massal.py
+
+2. Konfigurasi Daftar Sekolah
+Untuk menambah atau mengurangi daftar sekolah, Anda hanya perlu mengedit list DAFTAR_SEKOLAH di dalam script:
+
+Python
+DAFTAR_SEKOLAH = [
+    {"nama_sekolah": "SMPK 1", "parent_id": 41},
+    {"nama_sekolah": "SMPK 2", "parent_id": 42},
+    {"nama_sekolah": "SMPK 3", "parent_id": 43}
+]
+
+💻 Contoh Output Log Terminal
+Plaintext
+--- MEMULAI PROSES PEMBUATAN KATEGORI MASSAL UNTUK SEMUA SMPK ---
+
+[PROSES] Membuat kategori untuk SMPK 1 di Parent ID: 41...
+   => [SUKSES] Terbuat folder TA: 'SMPK 1 Tahun Ajaran 2627' (ID: 2810)
+       > Terbuat: 'SMPK 1 - Kelas 7' (ID: 2811)
+       > Terbuat: 'SMPK 1 - Kelas 8' (ID: 2812)
+       > Terbuat: 'SMPK 1 - Kelas 9' (ID: 2813)
+       ...
+==================================================================
+ PROSES MASSAL SELESAI! Silakan cek kembali halaman Moodle Anda. 
+==================================================================
+
+⚠️ Troubleshooting
+Error Access control exception: Terjadi jika Token API Anda tidak diberikan izin oleh Admin Pusat untuk mengeksekusi perintah web service. Harap hubungi super administrator Moodle untuk membukakan akses fungsi terkait.
+
+
+---
+
+### Cara Mengisinya di GitHub:
+1. Masuk ke halaman utama repositori Anda.
+2. Klik file **`README.md`** yang sudah ada.
+3. Klik ikon **Pensil (Edit this file)** di pojok kanan atas.
+4. Hapus isi bawaannya jika ada, lalu **Paste** seluruh teks di atas.
+5. Klik **Commit changes...** untuk menyimpan. Repositori Anda langsung terlihat sangat profesional!
